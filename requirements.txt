@@ -1,3 +1,4 @@
+pypandoc
 bravado
 pytest
 pytest-cov
