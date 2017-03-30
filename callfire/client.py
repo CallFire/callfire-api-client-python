@@ -10,7 +10,12 @@ class CallfireClient:
     def __init__(self, login, password):
         self.http_client = RequestsClient()
         self.http_client.set_basic_auth('www.callfire.com', login, password)
-        self.swagger_client = SwaggerClient.from_url(self.swagger_url(), http_client=self.http_client)
+        self.swagger_client = SwaggerClient.from_url(
+            spec_url=self.swagger_url(),
+            http_client=self.http_client,
+            config={
+                'validate_responses': False
+            })
 
     def __getattr__(self, item):
         return getattr(self.swagger_client, item)
