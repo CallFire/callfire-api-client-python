@@ -13,7 +13,7 @@ class CallfireClient:
         }
         self.config.update({} if config is None else config)
         print(self.config)
-        log.info('CallfireClient.config {0}', self.config)
+        log.debug('CallfireClient.config %s', self.config)
         self.http_client = RequestsClient()
         self.http_client.set_basic_auth('www.callfire.com', login, password)
         self.swagger_client = SwaggerClient.from_url(
