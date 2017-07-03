@@ -1,3 +1,12 @@
-# 2017-03-27
+Callfire API client Changelog
+=============================
 
-* initial release
+Version 0.0.8 - Jul 3 2017
+
+- added proxy support
+
+
+Version 0.0.7 - Mar 27 2017
+
+- initial release
+

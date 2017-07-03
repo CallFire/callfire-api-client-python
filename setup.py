@@ -12,7 +12,7 @@ except(IOError, ImportError) as err:
     log.error('cannot convert README.md', err)
 
 setuptools.setup(name='callfire-api-client-python',
-                 version='0.0.7',
+                 version='0.0.8',
                  description='CallFire API v2 Python client. Connect voice and text services to your application.',
                  long_description=long_description,
                  author='Vladimir Mikhailov',

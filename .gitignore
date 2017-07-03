@@ -27,6 +27,7 @@ coverage.*
 nosetests.xml
 htmlcov
 
+.idea
 callfire-api-client-python.iml
 callfire-api-client-python.ipr
 callfire-api-client-python.iws

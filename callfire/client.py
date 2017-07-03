@@ -9,12 +9,14 @@ log = logging.getLogger(__name__)
 class CallfireClient:
     def __init__(self, login, password, config=None):
         self.config = {
-            'validate_responses': False
+            'validate_responses': False,
+            'proxies': {}
         }
         self.config.update({} if config is None else config)
-        print(self.config)
+
         log.debug('CallfireClient.config %s', self.config)
         self.http_client = RequestsClient()
+        self.http_client.session.proxies.update(self.config['proxies'])
         self.http_client.set_basic_auth('www.callfire.com', login, password)
         self.swagger_client = SwaggerClient.from_url(
             spec_url=self.swagger_url(),
