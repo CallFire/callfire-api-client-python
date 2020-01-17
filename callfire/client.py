@@ -17,7 +17,7 @@ class CallfireClient:
         log.debug('CallfireClient.config %s', self.config)
         self.http_client = RequestsClient()
         self.http_client.session.proxies.update(self.config['proxies'])
-        self.http_client.set_basic_auth('www.callfire.com', login, password)
+        self.http_client.set_basic_auth('api.callfire.com', login, password)
         self.swagger_client = SwaggerClient.from_url(
             spec_url=self.swagger_url(),
             http_client=self.http_client,
